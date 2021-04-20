@@ -66,7 +66,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'tweekmonster/django-plus.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'hsanson/vim-android'
 "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
@@ -187,9 +191,19 @@ set wildignore+=**/node_modules/**
 set wildignore+=**/build/**
 let g:solarized_termcolors=256
 
+"<Android config>
+let g:gradle_path = $GRADLE_BIN
+"</Android config>
 
 " [[[xdebug]]]
 " php
 "let g:vdebug_options = {
 "\    'port' : 900,
 "\}
+
+"<Telescope Config>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"</Telescope Config>
